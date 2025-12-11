@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 
 //Local Header Files
 #include "data_management.h"
@@ -16,7 +17,7 @@
 //Functions:
 
 void DisplayDiagramm(Point* chart, size_t number_of_values);
-
+void addChar(int act_row, int highest_y, char character);
 
 
 #endif /*VISUALIZATION_H_*/
