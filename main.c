@@ -1,23 +1,38 @@
-
-//Global Headers
+// Global Headers
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-//Local Headers
+// Local Headers
 #include "visualization.h"
 #include "algorithms.h"
-#include "data_management.h"
+#include "points.h"
+#include "modes.h"
+
+#define NUMBER_OF_POINTS 20
+
+// main functions
+void printWelcomeMessage();
+void printModeDescription();
 
 int main(void)
 {
-    Point points[20];
-    for(int i = 0; i < 20; i++)
+    printWelcomeMessage();
+    Command mode;
+    Point points[NUMBER_OF_POINTS];
+    setNumbersRandom(points,NUMBER_OF_POINTS);
+    DisplayDiagramm(points,NUMBER_OF_POINTS);
+    do
     {
-        points[i].x_ = i;
-        points[i].y_ = rand() % 20+1;
-    }
+        mode = getMode();
+        printError(executeCommand(mode,points));
+        DisplayDiagramm(points,NUMBER_OF_POINTS);
+    } while (mode != QUIT);
 
-    DisplayDiagramm(points,20);
     return 0;
+}
+
+void printWelcomeMessage()
+{
+    printf("-----------------WELCOME to the Algorithm Visualizer-----------------\n");
 }

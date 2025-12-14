@@ -15,7 +15,7 @@ typedef struct _POINT_
 } Point;
 
 // Point functions
-
+void setPoints(Point* points);
 
 int *getXValues(Point *points, size_t size);
 int *getYValues(Point *points, size_t size);

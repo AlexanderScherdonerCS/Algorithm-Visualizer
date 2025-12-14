@@ -1,4 +1,4 @@
-#include "data_management.h"
+#include "points.h"
 
 int *getXValues(Point *points, size_t size)
 {

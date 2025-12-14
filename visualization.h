@@ -9,7 +9,7 @@
 #include <math.h>
 
 //Local Header Files
-#include "data_management.h"
+#include "points.h"
 
 //Constants
 #define MAX_CHART_LENGTH 20
