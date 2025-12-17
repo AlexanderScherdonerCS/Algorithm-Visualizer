@@ -20,13 +20,17 @@ int main(void)
     printWelcomeMessage();
     Command mode;
     Point points[NUMBER_OF_POINTS];
-    setNumbersRandom(points,NUMBER_OF_POINTS);
-    DisplayDiagramm(points,NUMBER_OF_POINTS);
+    int y_values[NUMBER_OF_POINTS];
+    setNumbersRandom(y_values, NUMBER_OF_POINTS);
+
+    convertIntegerToPoint(y_values,points,NUMBER_OF_POINTS);
+    DisplayDiagramm(points, NUMBER_OF_POINTS);
     do
     {
         mode = getMode();
-        printError(executeCommand(mode,points));
-        DisplayDiagramm(points,NUMBER_OF_POINTS);
+        printError(executeCommand(mode, y_values));
+        convertIntegerToPoint(y_values, points, NUMBER_OF_POINTS);
+        DisplayDiagramm(points, NUMBER_OF_POINTS);
     } while (mode != QUIT);
 
     return 0;

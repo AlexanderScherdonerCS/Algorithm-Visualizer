@@ -31,4 +31,7 @@ int minX(Point *points, size_t size);
 bool doesXContainInPoints(int search_number, Point *points, size_t size);
 bool doesYContainInPoints(int search_number, Point *points, size_t size);
 
+void convertPointToInteger(Point* in_point, int *integer_out, size_t size);
+void convertIntegerToPoint(int *integer_in, Point *point_out, size_t size);
+
 #endif /*DATAMANGEMENT_H_*/

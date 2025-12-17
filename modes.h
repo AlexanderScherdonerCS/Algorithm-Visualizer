@@ -8,7 +8,7 @@
 #include <math.h>
 
 #include "File_IO.h"
-#include "points.h"
+
 #include "algorithms.h"
 
 typedef enum _COMMAND_
@@ -38,9 +38,9 @@ void printModeDescription();
 int convertToNumber(char number);
 void printError(User_Error_Code error);
 
-User_Error_Code executeCommand(Command command, Point* points);
-User_Error_Code setNumbersByHand(Point *output_points);
-void setNumbersRandom(Point *output_points, int in_number_of_values);
+User_Error_Code executeCommand(Command command, int* points);
+User_Error_Code setNumbersByHand(int *output_points);
+void setNumbersRandom(int *output_points, int in_number_of_values);
 
 
 int getNumber();

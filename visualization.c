@@ -15,8 +15,7 @@ void DisplayDiagramm(Point *chart, size_t number_of_values)
     // Scale:
     // Get the greatest y - Number:
     int highest_y = maxY(chart, number_of_values);
-    int lowest_y = minY(chart, number_of_values);
-
+   
     int highest_x = maxX(chart, number_of_values);
     int lowest_x = minX(chart, number_of_values);
 

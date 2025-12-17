@@ -89,3 +89,19 @@ bool doesYContainInPoints(int search_number, Point *points, size_t size)
 
     return false;
 }
+
+void convertPointToInteger(Point *in_point, int *integer_out, size_t size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        integer_out[i] = in_point[i].y_;
+    }
+}
+void convertIntegerToPoint(int *integer_in, Point *point_out, size_t size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        point_out[i].x_ = i; 
+        point_out[i].y_ = integer_in[i];
+    }
+}

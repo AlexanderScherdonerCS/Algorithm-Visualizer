@@ -59,7 +59,7 @@ int convertToNumber(char number)
     return tolower(number) - '0';
 }
 
-User_Error_Code executeCommand(Command command, Point* points)
+User_Error_Code executeCommand(Command command, int *points)
 {
     int number_of_points = 20;
     User_Error_Code error_code = NO_ERROR;
@@ -69,19 +69,20 @@ User_Error_Code executeCommand(Command command, Point* points)
         error_code = setNumbersByHand(points);
         break;
     case SET_RANDOM:
-        setNumbersRandom(points,number_of_points);
+        setNumbersRandom(points, number_of_points);
         break;
     case BUBBLE_SORT:
-         BubbleSort(points,number_of_points);
+        BubbleSort(points, number_of_points);
         break;
     case INSERTION_SORT:
+        insertionSort(points, number_of_points);
         break;
     case LINEAR_SEARCH:
         break;
     case TREE_DATASTRUCTURE:
         break;
     case HELP:
-        printModeDescription();//ka
+        printModeDescription(); // ka
         break;
     case QUIT:
         break;
@@ -127,28 +128,26 @@ void printError(User_Error_Code error)
     }
 }
 
-User_Error_Code setNumbersByHand(Point *output_points)
+User_Error_Code setNumbersByHand(int *output_points)
 {
     int number_of_values = getNumber();
 
-    output_points = malloc(number_of_values * sizeof(Point *));
-    if(!output_points)
+    output_points = malloc(number_of_values * sizeof(int *));
+    if (!output_points)
     {
         printf("Allocoation Error");
     }
     for (int i = 0; i < number_of_values; i++)
     {
-        output_points[i].x_ = i;
-        output_points[i].y_ = getNumber();
+        output_points[i] = getNumber();
     }
     return NO_ERROR;
 }
-void setNumbersRandom(Point *output_points, int in_number_of_values)
+void setNumbersRandom(int *output_points, int in_number_of_values)
 {
     for (int i = 0; i < in_number_of_values; i++)
     {
-        output_points[i].x_ = i;
-        output_points[i].y_ = rand() % 20;
+        output_points[i] = rand() % 20;
     }
 }
 
