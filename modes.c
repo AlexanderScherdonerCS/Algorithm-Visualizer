@@ -8,8 +8,11 @@ void printModeDescription()
            "2: Set numbers random (not necessary at the start)\n"
            "3: Sort elements with Bubble Sort\n"
            "4: Sort elements with insertion Sort\n"
-           "5: Sort elements with linear Search\n"
-           "6: Sort elements with an tree Datastructure\n"
+           //"5: Sort elements with linear Search\n"
+           "6: Get Data from .xml file\n"
+           "7: Load Data in .xml file\n"
+           "8. Get Data from .ods file\n"
+           "9 Replace .ods File with new Data\n"
            "q: Quit\n");
 }
 
@@ -79,7 +82,8 @@ User_Error_Code executeCommand(Command command, int *points)
         break;
     case LINEAR_SEARCH:
         break;
-    case TREE_DATASTRUCTURE:
+    case GET_XML:
+        getXMLPoints("./Untitled.xml",points);
         break;
     case HELP:
         printModeDescription(); // ka
@@ -165,6 +169,7 @@ int getNumber()
         {
             if (isdigit(user_input))
             {
+                
                 result = user_input + (int)(pow(10, number_of_inputs));
             }
             else

@@ -40,3 +40,6 @@ void printWelcomeMessage()
 {
     printf("-----------------WELCOME to the Algorithm Visualizer-----------------\n");
 }
+
+
+
