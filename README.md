@@ -1,4 +1,5 @@
 Algorithm Visualizer
+https://github.com/AlexanderScherdonerCS/Algorithm-Visualizer
 
 Welcome to the Algorithm Visualizer!
 This program allows users to interactively input, load, and visualize numerical data, and apply sorting algorithms with a graphical representation of the array in the console. It supports reading data from .xml and .ods files, as well as manual or random number entry.
